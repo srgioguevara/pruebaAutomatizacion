@@ -8,7 +8,7 @@ test.describe("Verificar titulo de archivo PDF en Recaudos del la pagina Banco c
   }) => {
     const homePage = new HomePage(page);
     const empresasPage = new EmpresasPage(page);
-
+    
     // Paso 1: Ir a la página Banco
     await homePage.navigate();
 
@@ -19,7 +19,14 @@ test.describe("Verificar titulo de archivo PDF en Recaudos del la pagina Banco c
     // Paso 3: Ir a opción Productos
     await empresasPage.goToProductos();
 
-    // Paso 4: Ir a Pago y Recaudos, luego Recaudos /en curso
+    // Paso 4: Ir a Pago y Recaudos, 
     await empresasPage.goToPagoYRecaudos();
+
+    // Paso 5: ir a recaudo
+    await empresasPage.goToRecaudo();
+
+    // Paso 6: ir a PDF
+    await empresasPage.goToreglamentoPDF();
+    
   });
 });
